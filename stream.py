@@ -5,9 +5,8 @@ import csv
 import pandas as pd
 from datetime import datetime
 
-API_KEY = 'AIzaSyAGe4MB8lZcHE4yKlL8Uqt0z3j2VmBqiVk'  # Replace with your API key
+API_KEY = 'AIzaSyAGe4MB8lZcHE4yKlL8Uqt0z3j2VmBqiVk'  
 
-# Custom CSS for modern styling
 st.set_page_config(
     page_title="Lead Generator Pro",
     page_icon="🎯",
@@ -15,7 +14,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
 st.markdown("""
 <style>
     .main-header {
@@ -253,12 +251,12 @@ def convert_to_csv(data):
     df = pd.DataFrame(data)
     return df.to_csv(index=False).encode('utf-8')
 
-# Sidebar
+
 with st.sidebar:
     st.markdown("""
     <div style="text-align: center; padding: 1rem;">
         <h2 style="color: white; margin-bottom: 1rem;">🎯 Lead Generator Pro</h2>
-        <p style="color: rgba(255,255,255,0.8);">Advanced business lead generation powered by Google Maps API</p>
+        <p style="color: rgba(255,255,255,0.8);">Advanced business lead generation </p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -266,7 +264,7 @@ with st.sidebar:
     
     st.markdown("### 📊 Quick Stats")
     
-    # Placeholder metrics - you can make these dynamic
+    
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("""
@@ -294,15 +292,14 @@ with st.sidebar:
     st.markdown("### 📞 Support")
     st.markdown("Need help? Contact us at support@leadgenerator.com")
 
-# Main content
+
 st.markdown("""
 <div class="main-header">
     <h1>🎯 Lead Generator Pro</h1>
-    <p>Discover high-quality business leads with our advanced Google Maps-powered search engine</p>
+    <p>Discover high-quality business leads with our search engine</p>
 </div>
 """, unsafe_allow_html=True)
 
-# Search Section
 st.markdown("""
 <div class="search-container">
     <h3>🔍 Search for Business Leads</h3>
@@ -334,7 +331,7 @@ with col2:
         help="Click to start searching for business leads"
     )
 
-# Results Section
+
 if search_clicked:
     if not industry_input or not location_input:
         st.markdown("""
@@ -344,11 +341,11 @@ if search_clicked:
         </div>
         """, unsafe_allow_html=True)
     else:
-        with st.spinner("🔍 Searching Google Maps for businesses..."):
+        with st.spinner("🔍 Searching for businesses..."):
             leads = lead_generation(industry_input, location_input)
         
         if leads:
-            # Stats Card
+            
             st.markdown(f"""
             <div class="stats-card">
                 <h2>✅ {len(leads)}</h2>
@@ -422,7 +419,7 @@ if search_clicked:
             </div>
             """, unsafe_allow_html=True)
 
-# Footer
+
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; padding: 2rem; color: #666;">
